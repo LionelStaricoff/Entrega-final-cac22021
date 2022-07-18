@@ -1,7 +1,6 @@
 <%-- 
-    Document   : usuario
-    Created on : 04/07/2022, 01:59:17
-    Author     : jose
+ 
+    Author     : staricofflionel@hotmail.com
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
