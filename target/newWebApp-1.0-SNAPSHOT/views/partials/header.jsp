@@ -10,32 +10,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bachir discs</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-        <style>
-            #pchico{
-                font-size: 14px;
-            }
-            img{
-              width: 10 rem;
-              height: 16rem;
-            }
-            
-            .fijo{
-              position:fixed;
-              top:0;
-              z-index: 2;
-            }
-            
-            </style>  
-    </he
-    <body style="display:grid; grid-template-rows: 1fr 5fr 1fr; min-height: 100vh;">
-        
-               <header id="inicio" class="container-fluid bg-ligth " >
+ <link href="/css/header.css" rel="stylesheet"> 
+ 
+    </head>
+     
+    <body class="fondo">
+    <header >
+               <div id="inicio" class="container-fluid bg-ligth " >
                         <div class="row   border">
                           <div class="col ">
                                 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
                                         <div class="container-fluid fijo">
-                                          <a class="navbar-brand text-info" href="#">Bachir Discs</a>
+                                          <a class="navbar-brand text-info" href="/index.jsp">Bachir Discs</a>
                                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                             <span class="navbar-toggler-icon"></span>
                                           </button>
@@ -47,10 +33,10 @@
                 
                 
                                               <li class="nav-item">
-                                                <a class="nav-link text-info" href="#formulario">Pedidos</a>
+                                                <a class="nav-link text-info" href="#">Pedidos</a>
                                               </li>
                                               <li class="nav-item">
-                                                <a class="nav-link text-info" href="#" >Login</a>
+                                                <a class="nav-link text-info" href="../index.jsp#login" >Login</a>
                                               </li>
                                             </ul>
                                             <form class="d-flex">
@@ -60,7 +46,8 @@
                                           </div>
                                         </div>
                                       </nav>
-                                      
+                          </div> 
+                            </div>
                           </div>
                         
         

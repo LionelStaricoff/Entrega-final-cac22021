@@ -1,0 +1,15 @@
+  .pchico{
+                font-size: 14px;
+            }
+            img{
+              width: 400px;
+              height: 300px;
+            }
+            
+            .fijo{
+              position:fixed;
+              top:0;
+              z-index: 2;
+            }
+            
+           

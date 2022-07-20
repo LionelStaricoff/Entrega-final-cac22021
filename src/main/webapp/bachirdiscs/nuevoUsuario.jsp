@@ -46,8 +46,8 @@
                        <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="usuariolHelp">
                      </div>
                      <div class="mb-3">
-                      <label for="Password1" class="form-label">Usuario </label>
-                      <input type="Password1" class="form-control" name="Password1" id="usuario" aria-describedby="usuariolHelp">
+                      <label for="Password" class="form-label">Password </label>
+                      <input type="Password" class="form-control" name="Password" id="Password" aria-describedby="PasswordHelp">
                     </div>
                     <div class="mb-3">
                       <label for="Pedidos"  class="form-label">Pedidos o consultas</label>
