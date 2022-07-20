@@ -5,7 +5,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/views/partials/header.jsp" %>
-        <main>
+<main class="fanimado  text-center">
             <h1>Informacion de Acceso</h1>
             
             <%

@@ -12,4 +12,19 @@
               z-index: 2;
             }
             
-           
+            .ico{
+                width: 20px;
+                height: 20px;
+            }
+            
+            .fanimado {
+                height: 600px;
+  background-color: yellow;
+  animation: user 6s infinite alternate;
+}
+
+@keyframes user {
+  from {background-color: yellow;}
+  to {background-color: red;}
+
+}
