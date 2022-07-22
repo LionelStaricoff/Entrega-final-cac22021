@@ -5,7 +5,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/views/partials/header.jsp" %>
-        <main class="d-flex flex-column justify-content-center align-items-center">
+        <main class="d-flex flex-column justify-content-center align-items-center vh-50 ">
             <h2 class="mb-3">Informacion de registro:</h2>
             
             <%
@@ -13,6 +13,7 @@
             switch (uCreado) {
                 case 1:
                     %>
+                    <img src="/img/bienvenidos.jpg" />
                     <h3 class="text-success">¡Registro exitoso!</h3>
                     <%
                     break;
@@ -29,7 +30,7 @@
             }
             %>
             
-            <a href="/" class="mt-3">Volver al INICIO</a>
+            <a href="/" class="mt-3 "><img src="/img/flecha.gif"/></a> 
             
         </main>
 

@@ -50,3 +50,23 @@
     background-image: url("/img/fondo.jpg");
     background-color: aqua;
 }
+
+
+.user-fondo{
+  
+    height: 35rem;
+  
+  
+}
+
+           .colorAnimado {
+                
+  background-color:  green;
+  animation: col 6s infinite alternate;
+}
+
+@keyframes col {
+  from {background-color: green;}
+  to {background-color: aquamarine;}
+
+}
