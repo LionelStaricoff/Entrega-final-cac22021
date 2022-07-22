@@ -4,7 +4,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<main class="container d-flex justify-content-center align-items-center">
+<main class="container-fluid d-flex justify-content-center align-items-center w-100">
 <div class="row border">
         <div class="col">
 

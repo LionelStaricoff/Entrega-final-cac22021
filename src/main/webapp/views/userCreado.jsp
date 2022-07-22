@@ -1,29 +1,35 @@
 <%-- 
  
-    Author     : staricofflionel@hotmail.com
+    Author     : staricofflionel@gmail.com
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/views/partials/header.jsp" %>
-<main class="text-center ">
-           
+        <main class="d-flex flex-column justify-content-center align-items-center">
+            <h2 class="mb-3">Informacion de registro:</h2>
             
             <%
             int uCreado = (int) session.getAttribute("uCreado");
-            if (uCreado == 1) {
-            %>
-                <h3 class="text-info bg-success border rounded-pill">¡Registro exitoso!</h3>
-                <<img src="/img/bienvenidos.jpg" alt="alt"/>>
-            <%
+            switch (uCreado) {
+                case 1:
+                    %>
+                    <h3 class="text-success">¡Registro exitoso!</h3>
+                    <%
+                    break;
+                case 2:
+                    %>
+                    <h3 class="text-danger">¡El usuario ya existe!</h3>
+                    <%
+                    break;
+                default:
+                    %>
+                    <h3 class="text-danger">¡Registro fallido!</h3>
+                    <%
+                    break;
             }
-            else {
-            %>
-                <h3 class="text-danger">¡Registro fallido!</h3>
-            <%
-            } 
             %>
             
-            <p> <a href="/">Volver al LOGIN</a></p>
+            <a href="/" class="mt-3">Volver al INICIO</a>
             
         </main>
 

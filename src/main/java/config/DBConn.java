@@ -10,12 +10,13 @@ import java.sql.SQLException;
 
 /**
  *
- * @author jose
+ * @author staricofflionel@gmail.com
  */
 public class DBConn {
     private String driver = "com.mysql.jdbc.Driver";
-    private String host = "jdbc:mysql://localhost:3306/";
-    
+    private String server = "localhost";
+    private String host = "jdbc:mysql://" + server + ":3306/";
+        
     public Connection getConnection(String database, String userDB, String passwordDB){
         Connection conn = null;
         try {
@@ -26,24 +27,5 @@ public class DBConn {
         }
         return conn;
     }
-    
-//    public static void main(String[] args) {
-//    
-//        DBConn mysql = new DBConn();
-//        Connection conn = mysql.getConnection("homebanking", "root", "1234");
-//        try {
-//            Statement stm = conn.createStatement();
-//            ResultSet rs = stm.executeQuery("SELECT * FROM users;");
-//            
-//            while(rs.next()){
-//                System.out.println(rs.getString("username"));
-//                System.out.println(rs.getString("name"));
-//                System.out.println(rs.getString("last_name"));
-//                System.out.println();
-//            }
-//        } catch(SQLException error) {
-//            error.printStackTrace();
-//        }  
-//    }
-            
+
 }

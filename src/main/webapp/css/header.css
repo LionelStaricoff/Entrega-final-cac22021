@@ -6,10 +6,12 @@
               height: 300px;
             }
             
+           
             .fijo{
               position:fixed;
               top:0;
               z-index: 2;
+          
             }
             
             .ico{
@@ -27,4 +29,24 @@
   from {background-color: yellow;}
   to {background-color: red;}
 
+}
+
+           .fanimadoform {
+                
+  background-color: yellow;
+  animation: form 6s infinite alternate;
+}
+
+@keyframes form {
+  from {background-color: yellow;}
+  to {background-color: red;}
+
+}
+.clform{
+    background: yellow;
+}
+
+.fondo{
+    background-image: url("/img/fondo.jpg");
+    background-color: aqua;
 }

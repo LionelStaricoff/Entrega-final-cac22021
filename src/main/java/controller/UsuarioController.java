@@ -18,7 +18,7 @@ import model.Usuario;
 
 /**
  *
- * @author jose
+ * @author staricofflionel@gmail.com
  */
 @WebServlet(name = "UsuarioController", urlPatterns = {"/usuario/*"})
 public class UsuarioController extends HttpServlet {
@@ -42,35 +42,80 @@ public class UsuarioController extends HttpServlet {
             String action = request.getPathInfo();
             UsuarioDAO udao = new UsuarioDAO();
             HttpSession session = request.getSession();
+            Usuario actualUser;
+            String username;
+            String password;
+            String name;
+            String last_name;
+            String email;
+            int regs_afectados;
             
             switch (action) {
                 case "/loginUser":
-                    String username = request.getParameter("username");
-                    String password = request.getParameter("password");
+                    username = request.getParameter("username");
+                    password = request.getParameter("password");
+                    
+               
                     
                     boolean existeUsuario = udao.login(username, password);
-                    session.setAttribute("existeUsuario", existeUsuario);
-
+                    session.setAttribute("isLogin", existeUsuario);
+                    session.setAttribute("actualUsername", username);
                     response.sendRedirect("/views/user.jsp");
+                    break;
+            
+                case "/logoutUser":
+                    session.setAttribute("isLogin", false);
+                    session.setAttribute("actualUsername", "");
+                    response.sendRedirect("/");
                     break;
                 
                 case "/createUser":
                     username = request.getParameter("username");
-                    password = request.getParameter("password");
-                    String name = request.getParameter("name");
-                    String last_name = request.getParameter("last_name");
-                    String email = request.getParameter("email");
-              
-                    int uCreado = udao.createUser(username, password, name, last_name, email);
-                    session.setAttribute("uCreado", uCreado);
+                    if (udao.getUserByUsername(username) == null) {
+                        password = request.getParameter("password");
+                        name = request.getParameter("name");
+                        last_name = request.getParameter("last_name");
+                        email = request.getParameter("email");
+                        actualUser = new Usuario(username, password, name, last_name, email);
+                        regs_afectados = udao.createUser(actualUser);
+                    }
+                    else {
+                        regs_afectados = 2;
+                    }
+                    session.setAttribute("uCreado", regs_afectados);
                     response.sendRedirect("/views/userCreado.jsp");
                     break;
                 
+                case "/viewUser":
+                    username = (String) session.getAttribute("actualUsername");
+                    actualUser = udao.getUserByUsername(username);
+                    
+                    session.setAttribute("actualUser", actualUser);
+                    response.sendRedirect("/views/edicion.jsp");
+                    break;
+                    
                 case "/updateUser":
+                    username = (String) session.getAttribute("actualUsername");
+                    password = request.getParameter("password");
+                    name = request.getParameter("name");
+                    last_name = request.getParameter("last_name");
+                    email = request.getParameter("email");
+                    actualUser = new Usuario(username, password, name, last_name, email);
+                    regs_afectados = udao.updateUser(actualUser);
+
+                    session.setAttribute("actualUser", actualUser);
+                    response.sendRedirect("/");
                     break;
                     
                 case "/deleteUser":
-                break;
+                    username = (String) session.getAttribute("actualUsername");
+                    regs_afectados = udao.deleteUser(username);
+                    session.setAttribute("isLogin", false);
+                    session.setAttribute("actualUsername", "");
+                    session.setAttribute("actualUser", null);
+                    actualUser = null;
+                    response.sendRedirect("/");
+                    break;
                 
                 default:
                     break;

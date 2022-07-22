@@ -1,16 +1,16 @@
 <%-- 
- 
-    Author     : staricofflionel@hotmail.com
+
+    Author     : staricofflionel@gmail.com
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/views/partials/header.jsp" %>
-<main class="fanimado  text-center">
-            <h1>Informacion de Acceso</h1>
+        <main class="d-flex flex-column justify-content-center align-items-center">
+            <h2 class="mb-3">Informacion de ingreso:</h2>
             
             <%
-            boolean existeUsuario = (boolean) session.getAttribute("existeUsuario");
-            if (existeUsuario) {
+            isLogin = (boolean) session.getAttribute("isLogin");
+            if (isLogin) {
             %>
                 <h3 class="text-success">Acceso permitido</h3>
                 <h3>¡Bienvenido!</h3>
@@ -19,10 +19,11 @@
             else {
             %>
                 <h3 class="text-danger">Acceso denegado</h3>
-                <a href="/">Volver al LOGIN</a>
+                
             <%
             } 
             %>
+            <a href="/" class="mt-3">Volver al INICIO</a>
                 
         </main>
 

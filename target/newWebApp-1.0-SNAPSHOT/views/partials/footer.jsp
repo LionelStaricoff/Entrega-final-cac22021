@@ -1,19 +1,34 @@
 <%-- 
-  
-    Author     : staricofflionel@hotmail.com
+ 
+    Author     :staricofflionel@gmail.com
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+ 
 
-            
         
-<footer class="container d-flex justify-content-around align-items-center bg-light w-100 ">
-         <div class="row   border">
-                          <div class="col ">
-    <a href="#"><img class="ico" src="/ico/f.ico"></a>
-    <a href="#"><img class="ico" src="/ico/i.ico"></a>
-    <a href="#"><img class="ico" src="/ico/t.ico"></a>
-    <a href="#"><img class="ico" src="/ico/w.ico"></a>                      </div>
+<footer class=" w-100 ">
+         <div class="row   ">
+              <div class="col container d-flex justify-content-start align-items-center ">
+              <span  style="display: <%= !isLogin?"none":"initial"  %> ;" >
+                        <a  class="btn btn-outline-dark" href="/usuario/viewUser">Mi cuenta</a>            
+              </span>
+              </div>   
+                        <div class="col ">
+                            <div class="container d-flex justify-content-around align-items-center ">
+    <a href="#"><img class="ico mx-0" src="/ico/f.ico"></a>
+    <a href="#"><img class="ico mx-4" src="/ico/i.ico"></a>
+    <a href="#"><img class="ico mx-4" src="/ico/t.ico"></a>
+    <a href="#"><img class="ico mx-0" src="/ico/w.ico"></a>                      </div>
+         </div>
+              
+              
+                           <div class="col container d-flex justify-content-end align-items-center ">
+              <span  style="display: <%= !isLogin?"none":"initial" %> ;">
+                        <a  class="btn btn-outline-dark" href="/usuario/logoutUser">Salir</a>            
+              </span>
+              </div>
+                        
          </div>
       </footer>    
     <!-- JavaScript Bundle with Popper -->

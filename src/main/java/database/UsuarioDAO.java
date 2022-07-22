@@ -6,7 +6,6 @@ package database;
 
 import config.DBConn;
 import java.sql.Connection;
-import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +14,7 @@ import model.Usuario;
 
 /**
  *
- * @author jose
+ * @author staricofflionel@gmail.com
  */
 public class UsuarioDAO {
     
@@ -23,7 +22,10 @@ public class UsuarioDAO {
     
     public UsuarioDAO(){
         DBConn conn = new DBConn();
-        connection = conn.getConnection("homebanking", "root", "1234");
+        String DB = "homebanking";
+        String userDB = "root";
+        String passDB = "1234";
+        connection = conn.getConnection(DB, userDB, passDB);
     }
     
     public boolean login(String userInput, String passInput) throws SQLException {
@@ -40,61 +42,97 @@ public class UsuarioDAO {
         return rs.next();
     }
     
-    public Usuario getUser(int id) throws SQLException {
+    public Usuario getUserById(int id) throws SQLException {
         PreparedStatement ps;
         ResultSet rs;
         Usuario u = null;
         
-            ps = connection.prepareStatement("SELECT * FROM users WHERE id = ?");
-            ps.setInt(1, id);
-            
-            rs = ps.executeQuery();
-            
-            if(rs.next()) {
-                String username = rs.getString("username");
-                String password = rs.getString("password");
-                String name = rs.getString("name");
-                String last_name = rs.getString("last_name");
-                String email = rs.getString("email");
-                
-                u = new Usuario(username, password, name, last_name, email);
-            }
-            
-            return u;
+        ps = connection.prepareStatement("SELECT * FROM users WHERE id = ?");
+        ps.setInt(1, id);
+
+        rs = ps.executeQuery();
+
+        if(rs.next()) {
+            String username = rs.getString("username");
+            String password = rs.getString("password");
+            String name = rs.getString("name");
+            String last_name = rs.getString("last_name");
+            String email = rs.getString("email");
+
+            u = new Usuario(username, password, name, last_name, email);
+        }
+        
+        return u;
     }
     
-    public int createUser(String username, String password, String name, String last_name, String email) throws SQLException {
+    public Usuario getUserByUsername(String username) throws SQLException {
+        PreparedStatement ps;
+        ResultSet rs;
+        Usuario u = null;
+
+        ps = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
+        ps.setString(1, username);
+
+        rs = ps.executeQuery();
+
+        if(rs.next()) {
+            String password = rs.getString("password");
+            String name = rs.getString("name");
+            String last_name = rs.getString("last_name");
+            String email = rs.getString("email");
+
+            u = new Usuario(username, password, name, last_name, email);
+        }
+        return u;
+    }
+    
+    public int createUser(Usuario u) throws SQLException {
         PreparedStatement ps;
         int lineasAfectadas;
         
-        String pQuery = "INSERT INTO users (username, password, name, last_name, email)"
-                + "VALUES(?, ?, ?, ?, ?);";
-        
+        String pQuery = "INSERT INTO users (username, password, name, last_name, email, signup_date)"
+                + " VALUES(?, ?, ?, ?, ?, sysdate());";
         ps = connection.prepareStatement(pQuery);
         
-        ps.setString(1, username);
-        ps.setString(2, password);
-        ps.setString(3, name);
-        ps.setString(4, last_name);
-        ps.setString(5, email);
+        ps.setString(1, u.getUsername());
+        ps.setString(2, u.getPassword());
+        ps.setString(3, u.getName());
+        ps.setString(4, u.getLast_name());
+        ps.setString(5, u.getEmail());
          
         lineasAfectadas = ps.executeUpdate();
         return lineasAfectadas;
     }
-            
-//    public static void main(String[] args) {
-//
-//        UsuarioDAO udao = new UsuarioDAO();
-//
-//        try {
-//            Usuario u = udao.getUser(1);
-//            System.out.println(u.getName());
-//            System.out.println(u.getLast_name());
-//            
-//        } catch(SQLException error) {
-//            error.printStackTrace();
-//        }  
-//    }
     
+    public int updateUser(Usuario u) throws SQLException {
+        PreparedStatement ps;
+        int lineasAfectadas;
+        
+        String pQuery = "UPDATE users SET password = ?, name = ?, last_name = ?, email = ?"
+                + " WHERE username = ?;";
+        ps = connection.prepareStatement(pQuery);
+        
+        ps.setString(1, u.getPassword());
+        ps.setString(2, u.getName());
+        ps.setString(3, u.getLast_name());
+        ps.setString(4, u.getEmail());
+        ps.setString(5, u.getUsername());
+         
+        lineasAfectadas = ps.executeUpdate();
+        return lineasAfectadas;
+    }
+    
+    public int deleteUser(String username) throws SQLException {
+        PreparedStatement ps;
+        int lineasAfectadas;
+        
+        String pQuery = "DELETE FROM users WHERE username = ?;";
+        ps = connection.prepareStatement(pQuery);
+        
+        ps.setString(1, username);
+        lineasAfectadas = ps.executeUpdate();
+        return lineasAfectadas;
+    }
+
 }
  

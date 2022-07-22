@@ -1,6 +1,5 @@
 <%-- 
-  
-    Author     : staricofflionel@hotmail.com
+    Author     : staricofflionel@gmail.com
 --%>
 
 
@@ -9,12 +8,13 @@
 <%@include file="/views/partials/carrousel.jsp" %>
 
 
-<main class="container d-flex justify-content-center align-items-center">
+      
+<main class="container-fluid d-flex justify-content-center align-items-center">
 
     <!--  equipos -->
-<div class="row border">
+<div class="row border ">
         <div class="col">
-              <div class="card" style="width: 18rem;">
+              <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
                       <img src="/img/parlante1.jpg" class="card-img-top " alt="...">
                       <div class="card-body transparente">
                         <h6>Edifier Altavoz inteligente</h6>
@@ -26,7 +26,7 @@
                     </div>
         </div>
         <div class="col">
-              <div class="card" style="width: 18rem;">
+              <div class="card  container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
                       <img src="/img/parlante2.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Muzen Wild</h6>
@@ -37,7 +37,7 @@
                     </div>
         </div>
         <div class="col">
-              <div class="card" style="width: 18rem;">
+              <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
                       <img src="/img/p3.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Samsung HW-A450/ZA</h6>
@@ -50,7 +50,7 @@
     <!-- consolas de sonido -->
     <div class="row border">
         <div class="col">
-              <div class="card" style="width: 18rem;">
+              <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
                       <img src="/img/cs1.png" class="card-img-top " alt="...">
                       <div class="card-body">
                         <h6>XENYX X1222USB</h6>
@@ -62,7 +62,7 @@
                     </div>
         </div>
         <div class="col">
-              <div class="card" style="width: 18rem;">
+              <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
                       <img src="/img/cs2.webp" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Mixer Behringer Xenyx 802 Consola Mezcladora De Sonido</h6>
@@ -75,7 +75,7 @@ Puedes conectar 2 microfonos (pueden ser de condensador ya que tiene phantom pow
                     </div>
         </div>
         <div id="cs3" class="col">
-              <div class="card" style="width: 18rem;">
+              <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
                       <img src="/img/cs3.webp" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Controlador Consola Dj Pioneer Ddj200 Compatible Celular</h6>
@@ -87,36 +87,10 @@ Compatibilidad con varias aplicaciones y soporte para servicios de transmisión. 
                       </div>
         
         
-        <!-- formulario login -->
+
     
-      <div id="login" class="row border">
-       <div class="col w-100">
-            <form method="POST" action="/usuario/loginUser" class="bg-light p-4 rounded" >
-                <h2 class="mb-4 text-center">Login</h2>
-                <div class="row mb-3">
-                    <label for="username" class="col-3 formlabel">Usuario:</label>
-                    <input type="text" id="username" name="username" class="col-9 formcontrol">
-                </div>
-                
-                <div class="row mb-3">
-                    <label for="password" class="col-3 formlabel">Clave:</label>
-                    <input type="password" id="password" name="password" class="col-9 formcontrol">
-                </div>
-                <div class="row align-items-center justify-content-between">
-                        <div class="col-auto">
-                            <button class="btn btn-dark" type="submit">Ingresar</button>
-                        </div>
-                        <div class="col-auto">
-                            <a  href="/views/registro.jsp" class="link-primary">Registrarme</a>
-                        </div>
-                    </div>
-                </form>
-              </div>
-          </div>
-    </div>
 </main>
 
-
-      
+  
 
 <%@include file="/views/partials/footer.jsp" %>
