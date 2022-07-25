@@ -7,11 +7,11 @@
  
 
         
-<footer class=" w-100 ">
+<footer class=" w-100 pb-3 pt-3">
          <div class="row   ">
               <div class="col container d-flex justify-content-start align-items-center ">
               <span  style="display: <%= !isLogin?"none":"initial"  %> ;" >
-                        <a  class="btn btn-outline-dark" href="/usuario/viewUser">Mi cuenta</a>            
+                        <a  class="btn btn-outline-dark ml-3" href="/usuario/viewUser">Mi cuenta</a>            
               </span>
               </div>   
                         <div class="col ">
@@ -25,7 +25,7 @@
               
                            <div class="col container d-flex justify-content-end align-items-center ">
               <span  style="display: <%= !isLogin?"none":"initial" %> ;">
-                        <a  class="btn btn-outline-dark" href="/usuario/logoutUser">Salir</a>            
+                        <a  class="btn btn-outline-dark mr-3" href="/usuario/logoutUser">Salir</a>            
               </span>
               </div>
                         

@@ -4,8 +4,6 @@
 --%>
 
 
-<%@include file="/views/partials/header.jsp" %>
-
 <%
   if ((boolean)session.getAttribute("isLogin")){
     response.sendRedirect("/");
@@ -13,9 +11,9 @@
 %>
 
 
-   <main class="container d-flex justify-content-center align-items-center">
+   <main class="container-fluid  justify-content-center align-items-center bg-light ">
             
-            <form method="POST" action="/usuario/createUser" class="bg-light p-4 rounded" >
+            <form method="POST" action="/usuario/createUser" class="colorAnimado p-4 rounded" >
                 <h2 class="mb-4 text-center">Registro</h2>
                 <div class="row mb-3">
                     <label for="username" class="col-3 formlabel">Usuario:</label>
@@ -49,5 +47,7 @@
                 </div>
             </form>
         </main>
-
+<section class="colorAnimado ">
+<%@include file="/views/partials/header.jsp" %>
+</section>
 <%@include file="/views/partials/footer.jsp" %>

@@ -4,9 +4,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<section style="display: none">
 <%@include file="/views/partials/header.jsp" %>
-        <main class="d-flex flex-column justify-content-center align-items-center vh-50 ">
-            <h2 class="mb-3">Informacion de registro:</h2>
+</section>  
+<section class="bg-success">
+ <%@include file="/views/partials/footer.jsp" %>
+</section>
+<main class="d-flex flex-column justify-content-center align-items-center vh-100 colorAnimado  ">
+          
             
             <%
             int uCreado = (int) session.getAttribute("uCreado");
@@ -14,7 +19,7 @@
                 case 1:
                     %>
                     <img src="/img/bienvenidos.jpg" />
-                    <h3 class="text-success">¡Registro exitoso!</h3>
+                    <h3 class="text-light">¡Registro exitoso!</h3>
                     <%
                     break;
                 case 2:
@@ -30,8 +35,8 @@
             }
             %>
             
-            <a href="/" class="mt-3 "><img src="/img/flecha.gif"/></a> 
+             <a href="/" class="mt-4 pb-4 "><img  style="max-height: 100px" src="/img/flecha.gif"/></a> 
             
         </main>
 
- <%@include file="/views/partials/footer.jsp" %>
+
