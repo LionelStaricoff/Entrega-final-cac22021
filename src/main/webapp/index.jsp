@@ -15,7 +15,7 @@
 <div class="row border ">
         <div class="col">
               <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
-                      <img src="/img/parlante1.jpg" class="card-img-top " alt="...">
+                      <img src="/img/parlante1.png" class="card-img-top " alt="...">
                       <div class="card-body transparente">
                         <h6>Edifier Altavoz inteligente</h6>
                         <p>Altavoz WiFi sin micrófono, funciona con Alexa, compatible con AirPlay 2, Spotify Connect, 40W RMS Wi-Fi y sistema de sonido Bluetooth, MS50A  4.1</p>
@@ -27,7 +27,7 @@
         </div>
         <div class="col">
               <div class="card  container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
-                      <img src="/img/parlante2.jpg" class="card-img-top" alt="...">
+                      <img src="/img/parlante2.png" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Muzen Wild</h6>
                               <p> Mini altavoz resistente al aire libre, altavoz portátil Bluetooth con volumen más alto, sonido cristalino, altavoces inalámbricos impermeables para viajes, al aire libre
@@ -38,7 +38,7 @@
         </div>
         <div class="col">
               <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
-                      <img src="/img/p3.jpg" class="card-img-top" alt="...">
+                      <img src="/img/p3.png" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Samsung HW-A450/ZA</h6>
                               <p>2.1ch Barra de sonido con Audio Dolby (2021) , Negra  </p>
@@ -63,7 +63,7 @@
         </div>
         <div class="col">
               <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
-                      <img src="/img/cs2.webp" class="card-img-top" alt="...">
+                      <img src="/img/cs2.png" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Mixer Behringer Xenyx 802 Consola Mezcladora De Sonido</h6>
                               <p> Espectacular mezclador de audio con 4 canales reales
@@ -76,7 +76,7 @@ Puedes conectar 2 microfonos (pueden ser de condensador ya que tiene phantom pow
         </div>
         <div id="cs3" class="col">
               <div class="card container-fluid d-flex justify-content-center align-items-center" style="width: 18rem;">
-                      <img src="/img/cs3.webp" class="card-img-top" alt="...">
+                      <img src="/img/cs3.png" class="card-img-top" alt="...">
                       <div class="card-body">
                               <h6>Controlador Consola Dj Pioneer Ddj200 Compatible Celular</h6>
                               <p>Se conecta via Bluetooth a la App We DJ, la cual instalas en cualquier dispositivo movil, Android, iOS, bien sea telefono o tablet.

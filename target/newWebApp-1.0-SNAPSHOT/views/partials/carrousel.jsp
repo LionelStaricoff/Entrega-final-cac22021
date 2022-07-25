@@ -5,7 +5,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <main class="container-fluid d-flex justify-content-center align-items-center w-100">
-<div class="row border">
+<div class="row ">
         <div class="col">
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -16,13 +16,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/img/p3.jpg" class=" " alt="...">
+      <img src="/img/p3.png" class=" " alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/img/cs3.webp" class=" " alt="...">
+      <img src="/img/cs3.png" class=" " alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/img/cs2.webp" class=" " alt="...">
+      <img src="/img/cs2.png" class=" " alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
