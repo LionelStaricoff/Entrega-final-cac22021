@@ -13,7 +13,7 @@
     <link href="/css/header.css" rel="stylesheet">
     <link rel="icon" href="/ico/icono.ico">
     </head>
-    <body style=" background-image: url(/img/fondo.jpg); opacity: 0.6" >
+    <body>
     <header >
                <div id="inicio" class="container-fluid bg-ligth " >
                         <div class="row   border">
@@ -82,6 +82,24 @@
                         <div class="col-auto">
                             <a  href="/views/registro.jsp" class="btn btn-outline-dark">Registrarme</a>
                         </div>
+                    </div>
+                </form>
+              </div>
+          </div>
+       
+       <!--formulario de consultas-->
+       
+        <div id="login" style="display: <%= !isLogin?"none":"initial" %> ;" class="row   ">
+       <div class="col w-100 ">
+            <form method="POST" action="/usuario/pedidos" class="fanimadoform p-4 rounded " >
+                <div class="row mb-1 form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+  <label name="pedidos" for="floatingTextarea2">comentarios/pedidos </label>
+</div>
+                <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-dark" type="submit">Enviar</button>
+                        </div>             
                     </div>
                 </form>
               </div>
