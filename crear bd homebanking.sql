@@ -9,7 +9,8 @@ password VARCHAR(8) NOT NULL,
 name VARCHAR(50) NOT NULL,
 last_name VARCHAR(60) NOT NULL,
 email VARCHAR(60) NOT NULL,
-signup_date datetime
+signup_date datetime,
+pedidos VARCHAR (255)
 );
 
 INSERT INTO users(username, password, name, last_name, email, signup_date)
