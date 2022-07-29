@@ -48,15 +48,14 @@ public class UsuarioController extends HttpServlet {
             String name;
             String last_name;
             String email;
+            String pedidos;
             int regs_afectados;
             
             switch (action) {
                 case "/loginUser":
                     username = request.getParameter("username");
                     password = request.getParameter("password");
-                    
-               
-                    
+
                     boolean existeUsuario = udao.login(username, password);
                     session.setAttribute("isLogin", existeUsuario);
                     session.setAttribute("actualUsername", username);
@@ -106,6 +105,17 @@ public class UsuarioController extends HttpServlet {
                     session.setAttribute("actualUser", actualUser);
                     response.sendRedirect("/");
                     break;
+                    
+                    
+                case "/updatePedidos":
+                    pedidos = (String) session.getAttribute("actualUsername");
+                    actualUser = new Usuario(pedidos);
+                    regs_afectados = udao.updatePedido(actualUser);
+                    
+                    session.setAttribute("actualUser", actualUser);
+                    response.sendRedirect("/");
+                    break;
+                    
                     
                 case "/deleteUser":
                     username = (String) session.getAttribute("actualUsername");

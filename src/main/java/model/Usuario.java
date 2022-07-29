@@ -17,6 +17,7 @@ public class Usuario {
     private String last_name;
     private String email;
     private Date signup_date;
+    private String pedidos;
     
     public Usuario(String username, String password){
         this.username = username;
@@ -32,7 +33,20 @@ public class Usuario {
         this.email = email;
         this.signup_date = new Date();
     }
+    
+     public Usuario(String pedidos){
+        this.pedidos = pedidos;
+     
+    }
 
+         public String getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(String pedidos) {
+        this.pedidos = pedidos;
+    }
+    
     public String getUsername() {
         return username;
     }

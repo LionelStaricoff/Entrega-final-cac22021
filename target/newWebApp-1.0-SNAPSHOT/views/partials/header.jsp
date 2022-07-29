@@ -20,14 +20,14 @@
                           <div class="col ">
                                 <nav class="navbar navbar-expand-lg navbar-light  ">
                                         <div class="container-fluid fijo">
-                                            <a class="navbar-brand text-info" href="/index.jsp"><img style="width:25px; height: 25px"  src="/ico/icono.ico" />Bachir Discs</a>
+                                            <a class="navbar-brand text-info " href="/index.jsp"><img style="width:25px; height: 25px"  src="/ico/icono.ico" />Bachir Discs</a>
                                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                             <span class="navbar-toggler-icon"></span>
                                           </button>
                                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                               <li class="nav-item">
-                                                <a class="nav-link active text-info" aria-current="page" href="#inicio">Inicio</a>
+                                                <a class="nav-link active text-info " aria-current="page" href="#inicio">Inicio</a>
                                               </li>
                 
                 
@@ -77,7 +77,7 @@
                 </div>
                 <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <button class="btn btn-outline-dark" type="submit">Ingresar</button>
+                            <button class="btn btn-outline-dark" type="submit">Ingresar </button>
                         </div>
                         <div class="col-auto">
                             <a  href="/views/registro.jsp" class="btn btn-outline-dark">Registrarme</a>
@@ -91,9 +91,9 @@
        
         <div id="login" style="display: <%= !isLogin?"none":"initial" %> ;" class="row   ">
        <div class="col w-100 ">
-            <form method="POST" action="/usuario/pedidos" class="fanimadoform p-4 rounded " >
+            <form method="POST" action="/usuario/updatePedidos" class="fanimadoform pb-1 p-4 rounded " >
                 <div class="row mb-1 form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control" maxlength="255" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
   <label name="pedidos" for="floatingTextarea2">comentarios/pedidos </label>
 </div>
                 <div class="row align-items-center justify-content-between">

@@ -19,6 +19,7 @@ import model.Usuario;
 public class UsuarioDAO {
     
     private Connection connection;
+  
     
     public UsuarioDAO(){
         DBConn conn = new DBConn();
@@ -58,7 +59,6 @@ public class UsuarioDAO {
             String name = rs.getString("name");
             String last_name = rs.getString("last_name");
             String email = rs.getString("email");
-
             u = new Usuario(username, password, name, last_name, email);
         }
         
@@ -79,8 +79,7 @@ public class UsuarioDAO {
             String password = rs.getString("password");
             String name = rs.getString("name");
             String last_name = rs.getString("last_name");
-            String email = rs.getString("email");
-
+            String email = rs.getString("email");        
             u = new Usuario(username, password, name, last_name, email);
         }
         return u;
@@ -121,6 +120,51 @@ public class UsuarioDAO {
         lineasAfectadas = ps.executeUpdate();
         return lineasAfectadas;
     }
+    
+    
+    
+    
+    
+    // formulario de pedeidos:
+    
+    
+    public Usuario getUserByUsername1(String username) throws SQLException {
+        PreparedStatement ps;
+        ResultSet rs;
+        Usuario p = null;
+
+        ps = connection.prepareStatement("SELECT pedidos FROM users WHERE username = ?");
+        ps.setString(1, username);
+
+        rs = ps.executeQuery();
+
+        if(rs.next()) {
+            String pedidos = rs.getString("pedidos");
+          p = new Usuario(pedidos);
+        }
+        return p;
+    }
+    
+       public int updatePedido(Usuario p) throws SQLException {
+        PreparedStatement ps;
+        int lineasAfectadas;
+        
+        String pQuery = "UPDATE users SET pedidos = ? WHERE username = ?";
+             
+        ps = connection.prepareStatement(pQuery);
+        
+        ps.setString(1, p.getPedidos());
+        ps.setString(2, p.getUsername());
+        lineasAfectadas = ps.executeUpdate();
+        return lineasAfectadas;
+    }
+       
+       
+       
+       
+       
+       
+       // eliminar usuario
     
     public int deleteUser(String username) throws SQLException {
         PreparedStatement ps;
