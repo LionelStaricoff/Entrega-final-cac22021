@@ -25,13 +25,14 @@ public class Usuario {
         this.signup_date = new Date();
     }
     
-    public Usuario(String username, String password, String name, String last_name, String email){
+    public Usuario(String username, String password, String name, String last_name, String email,String pedidos){
         this.username = username;
         this.password = password;
         this.name = name;
         this.last_name = last_name;
         this.email = email;
         this.signup_date = new Date();
+        this.pedidos = pedidos;
     }
     
      public Usuario(String pedidos){

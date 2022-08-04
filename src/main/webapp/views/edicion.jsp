@@ -18,6 +18,7 @@
     String name = actualUser.getName();
     String last_name = actualUser.getLast_name();
     String email = actualUser.getEmail();
+    String pedidos = actualUser.getPedidos();
 %>
 
 <br><br><br>
@@ -51,7 +52,10 @@
                     <label for="email" class="col-3 formlabel">Email:</label>
                     <input type="email" id="email" name="email" class="col-9 formcontrol">
                 </div>
-                
+                 <div class="row mb-3">
+                 <label for="pedidos" class="col-3 formlabel" >pedidos </label>
+                 <input type="text" name="pedidos" class="col-9 form-control" maxlength="255" placeholder="Leave a comment here" id="pedidos" style="height: 100px"></input>
+                 </div>
                  <div class="row align-items-center justify-content-between">
             <div class="col-auto">
                 <button class="btn btn-info " type="submit">Modificar</button>

@@ -7,7 +7,7 @@
 
 <%@include file="/views/partials/carrousel.jsp" %>
 
-
+<%@include file="/views/partials/pedidos.jsp" %>
       
 <main class="container-fluid d-flex justify-content-center align-items-center">
 

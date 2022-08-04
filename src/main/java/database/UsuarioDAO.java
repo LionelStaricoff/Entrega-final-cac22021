@@ -4,6 +4,7 @@
  */
 package database;
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import config.DBConn;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -59,7 +60,8 @@ public class UsuarioDAO {
             String name = rs.getString("name");
             String last_name = rs.getString("last_name");
             String email = rs.getString("email");
-            u = new Usuario(username, password, name, last_name, email);
+            String pedidos = rs.getString("pedidos");
+            u = new Usuario(username, password, name, last_name, email,pedidos);
         }
         
         return u;
@@ -79,8 +81,9 @@ public class UsuarioDAO {
             String password = rs.getString("password");
             String name = rs.getString("name");
             String last_name = rs.getString("last_name");
-            String email = rs.getString("email");        
-            u = new Usuario(username, password, name, last_name, email);
+            String email = rs.getString("email"); 
+            String pedidos = rs.getString("pedidos");
+            u = new Usuario(username, password, name, last_name, email,pedidos);
         }
         return u;
     }
@@ -90,7 +93,7 @@ public class UsuarioDAO {
         int lineasAfectadas;
         
         String pQuery = "INSERT INTO users (username, password, name, last_name, email, signup_date)"
-                + " VALUES(?, ?, ?, ?, ?, sysdate());";
+                + " VALUES(?, ?, ?, ?, ?,?, sysdate());";
         ps = connection.prepareStatement(pQuery);
         
         ps.setString(1, u.getUsername());
@@ -98,7 +101,8 @@ public class UsuarioDAO {
         ps.setString(3, u.getName());
         ps.setString(4, u.getLast_name());
         ps.setString(5, u.getEmail());
-         
+        ps.setString(5, u.getPedidos());                   
+        
         lineasAfectadas = ps.executeUpdate();
         return lineasAfectadas;
     }
@@ -126,26 +130,11 @@ public class UsuarioDAO {
     
     
     // formulario de pedeidos:
-    
-    
-    public Usuario getUserByUsername1(String username) throws SQLException {
-        PreparedStatement ps;
-        ResultSet rs;
-        Usuario p = null;
+  
 
-        ps = connection.prepareStatement("SELECT pedidos FROM users WHERE username = ?");
-        ps.setString(1, username);
-
-        rs = ps.executeQuery();
-
-        if(rs.next()) {
-            String pedidos = rs.getString("pedidos");
-          p = new Usuario(pedidos);
-        }
-        return p;
-    }
+  
     
-       public int updatePedido(Usuario p) throws SQLException {
+       public int updatePedidos(Usuario u) throws SQLException {
         PreparedStatement ps;
         int lineasAfectadas;
         
@@ -153,14 +142,15 @@ public class UsuarioDAO {
              
         ps = connection.prepareStatement(pQuery);
         
-        ps.setString(1, p.getPedidos());
-        ps.setString(2, p.getUsername());
+        ps.setString(1, u.getPedidos());
+        ps.setString(2, u.getUsername());
         lineasAfectadas = ps.executeUpdate();
         return lineasAfectadas;
+        
+        
     }
        
-       
-       
+      
        
        
        

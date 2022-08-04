@@ -75,7 +75,8 @@ public class UsuarioController extends HttpServlet {
                         name = request.getParameter("name");
                         last_name = request.getParameter("last_name");
                         email = request.getParameter("email");
-                        actualUser = new Usuario(username, password, name, last_name, email);
+                        pedidos = request.getParameter("pedidos");
+                        actualUser = new Usuario(username, password, name, last_name, email,pedidos);
                         regs_afectados = udao.createUser(actualUser);
                     }
                     else {
@@ -99,7 +100,8 @@ public class UsuarioController extends HttpServlet {
                     name = request.getParameter("name");
                     last_name = request.getParameter("last_name");
                     email = request.getParameter("email");
-                    actualUser = new Usuario(username, password, name, last_name, email);
+                    pedidos = request.getParameter("pedidos");
+                    actualUser = new Usuario(username, password, name, last_name, email,pedidos);
                     regs_afectados = udao.updateUser(actualUser);
 
                     session.setAttribute("actualUser", actualUser);
@@ -108,10 +110,12 @@ public class UsuarioController extends HttpServlet {
                     
                     
                 case "/updatePedidos":
-                    pedidos = (String) session.getAttribute("actualUsername");
+                   
+                    username = (String) session.getAttribute("actualUsername");
+                    pedidos = request.getParameter("pedidos");
                     actualUser = new Usuario(pedidos);
-                    regs_afectados = udao.updatePedido(actualUser);
-                    
+                    regs_afectados = udao.updateUser(actualUser);
+                    out.print(pedidos);
                     session.setAttribute("actualUser", actualUser);
                     response.sendRedirect("/");
                     break;
